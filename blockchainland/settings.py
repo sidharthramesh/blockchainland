@@ -21,6 +21,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'j&7&082f27jj-12(uaq2$#0mkc!q$5yesywxqlp*^ycw2j-07z'
+gov_public_key = 'Bgb2bJTnXGa4cqe8bXJ54ytYwGszKiiQvRxasru4DAAr'
+#private key is 'VoQSrCDZG5eMNNsk1N4KYWy5pauvyrHupU1DGBKAAQB'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -38,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'searchableselect',
 ]
 
 MIDDLEWARE = [

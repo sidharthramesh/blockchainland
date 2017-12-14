@@ -4,7 +4,19 @@
   <div class="col-sm-12 col-md-10 col-md-offset-1">
     <br/>
     <h3>Generate Key Pair</h3><hr/>
-    <p>Refresh the page for a new key pair.</p>
+    <p>Refresh the page for a new key pair. A better idea would be to generate your keypair locally.</p>
+    <div class="row">
+        
+        <div class="col-sm-12 col-md-12">
+            <div class="card fluid error">
+              <div class="section">
+        <p>
+        <b>Do not disclose your private key to anyone</b>
+        </p>
+              </div>
+            </div>
+        </div>
+    </div>
     <p>
         <fieldset>
             <div class="input-group vertical">
@@ -15,11 +27,9 @@
       <input type="text" value="{{key.private_key}}"><br>
       </div>  
     </fieldset>
+    
     <p>
-        <b>Do not disclose your private key to anyone</b>
-      </p>
-    <p>
-    <a href="/register">Register here</a> after you have chosen a public key, and have <b>safely stored the private key</b> for the same.
+    <b>Safely store your key pair</b>, then register yourself <a href="/register">here</a>.
   </p>
     </p>
   </div>

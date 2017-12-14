@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="row">
+    <div class="col-sm-12 col-md-10 col-md-offset-1">
+      <br/>
+      <h3>{{land.name}}</h3><hr/>
+      <p>
+          <b>Asset id:</b> {{land.asset_id}}<br>
+          <b>Current owner:</b> {{land.get_owner}}
+      </p>
+      <p>All transactions are live on the <a href="https://ipdb.io/">IPDB test blockchain</a></p>
+      <div class="row">
+            
+            <div class="col-sm-12 col-md-10 col-md-offset-1">
+                
+                    <fieldset>
+                    <legend>Blockchain explorer</legend>
+                
+                {% for txn in land.format_transactions %}
+                
+                
+                <div class="card fluid {{ message.tags }}">
+                        <div class="section">
+                                <p>{{txn|safe}}</p>
+                        </div>
+                </div>
+                {% endfor %}
+                    </fieldset>
+            
+            </div>
+        
+    </div>
+</div>
+{% endblock body %}

@@ -1,5 +1,5 @@
 from bigchaindb_driver import BigchainDB
-from bigchaindb_driver.crypto import generate_keypair
+from bigchaindb_driver.crypto import generate_keypair, CryptoKeypair
 from bigchaindb_driver.offchain import prepare_transfer_transaction
 from time import sleep
 url = 'https://test.ipdb.io'
@@ -25,6 +25,7 @@ def create_land(owner, details):
     txid = sent_creation_tx
     return txid
 def transfer_land(asset_id, current_owner, new_owner, metadata=None):
+    """New owner is a public key"""
     transfer_asset = {'id': asset_id}
     output_index = 0
     #output = asset['outputs'][output_index]
@@ -45,7 +46,7 @@ def transfer_land(asset_id, current_owner, new_owner, metadata=None):
                                             asset=transfer_asset,
                                             inputs=transfer_input,
                                             metadata=metadata,
-                                            recipients=new_owner.public_key,)
+                                            recipients=new_owner,)
     #fulfill
     fulfilled_transfer_tx = db.transactions.fulfill(prepared_transfer_tx,
                                             private_keys=current_owner.private_key)
@@ -55,7 +56,6 @@ def transfer_land(asset_id, current_owner, new_owner, metadata=None):
 
 def get_transactions(asset_id):
     transactions = db.transactions.get(asset_id=asset_id)
-    pretty_print(transactions)
     return transactions
 
 def pretty_print_transactions(asset_id):

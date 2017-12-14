@@ -6,14 +6,14 @@
         <thead>
           <tr>
             <th>Property name</th>
-            <th>Asset id</th>
+            <th>Owner</th>
           </tr>
         </thead>
         <tbody>
             {% for land in lands %}
             <tr>
-                    <td data-label="Property name">Chad</td>
-                    <td data-label="Asset id">Wilberts</td>
+                    <td data-label="Property name"> <a href={% url 'land_detail' land.pk %}>{{land.name}}</a></td>
+                    <td data-label="Asset id">{{land.get_owner}}</td>
             </tr>
             {% endfor %}
         </tbody>
