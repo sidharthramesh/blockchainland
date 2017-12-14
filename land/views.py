@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.views.generic import ListView, DetailView, FormView
 from .forms import CreateForm, TransferForm, RegisterForm
@@ -7,6 +7,8 @@ from .bigchainland import generate_keypair, create_land, transfer_land, get_tran
 from .models import Land, CryptoUser
 from blockchainland.settings import gov_public_key
 # Create your views here.
+def index(request):
+    return redirect('https://tornadoalert.github.io/blockchainland/')
 
 def generate(request):
     key = generate_keypair()

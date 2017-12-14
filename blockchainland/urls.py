@@ -18,6 +18,7 @@ from django.urls import path, include
 from land import views
 
 urlpatterns = [
+    path('/',views.index())
     path('admin/', admin.site.urls),
     path('create/',views.CreateView.as_view()),
     path('transfer/',views.TransferView.as_view()),
