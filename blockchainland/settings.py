@@ -27,7 +27,7 @@ gov_public_key = 'Bgb2bJTnXGa4cqe8bXJ54ytYwGszKiiQvRxasru4DAAr'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['blockchainland.herokuapp.com']
 
 
 # Application definition
