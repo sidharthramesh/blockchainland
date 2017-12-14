@@ -4,16 +4,29 @@
   <div class="col-sm-12 col-md-10 col-md-offset-1">
     <br/>
     <h3>Create property</h3><hr/>
-    <p>
-        <h4>Property on the blockchain can only be created by the government. Only a few private keys are accepted.</h4><br>
-        Name:<br>
-          <input type="text" name="create" id="create"><br>
-        Other attributes:<br>
-        <textarea name="" id="" cols="19" rows="5"></textarea><br>
-        Government private key:<br>
-        <input type="password"><br>
+    <form action="#">
+        <fieldset>
+            <legend>Property details</legend>
+        
+        <div class="input-group vertical">
+        
+        {{form.name.label}}<br>
+        {{form.name}}<br>
+        {{form.other_attributes.label}}<br>
+        {{form.other_attributes}}<br>
+      </div>
+    </fieldset>
+  <fieldset>
+      <legend>Property on the blockchain can only be created by the government</legend>
+      <div class="input-group vertical">
+        {{form.government_private_key.label}}
+        {{form.government_private_key}}
+      </div>
+        
+  </fieldset>
+  
         <input type="submit" name="create" id="" value="Create asset">
-      </p>
+    </form>
   </div>
 </div>
 {% endblock body %}

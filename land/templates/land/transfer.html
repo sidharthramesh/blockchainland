@@ -6,13 +6,25 @@
     <h3>Transfer property</h3><hr/>
     <p>
         <h4>Look <a href="http://">here</a> for details on properties</h4><br>
-        Asset id:<br>
-          <input type="text" name="asset_id" id="asset_id"><br>
-        Owner's private key:<br>
-          <input type="password" name="" id=""><br>
-        Recepient's address (public key):<br>
-          <input type="text"><br>
+        <form action="">
+            <fieldset>
+                <legend>Details of transfer</legend>
+            <div class="input-group vertical">
+            {{form.asset_id.label}}<br>
+            {{form.asset_id}}<br>
+            {{form.receipient_public_key.label}}
+            {{form.receipient_public_key}}
+            </div>
+            </fieldset>
+            <fieldset>
+                <legend>Confirm?</legend>
+            <div class="input-group vertical">
+                {{form.owner_private_key.label}}<br>
+                {{form.owner_private_key}}<br>
+            </div>
+            </fieldset>
         <input type="submit" name="transfer" id="" value="Transfer asset">
+        </form>
       </p>
   </div>
 </div>
