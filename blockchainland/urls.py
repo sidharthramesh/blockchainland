@@ -20,5 +20,7 @@ from land import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('create/',views.index,name='create'),
-    path('transfer/',views.transfer)
+    path('transfer/',views.transfer),
+    path('register/',views.register),
+    
 ]
