@@ -6,7 +6,8 @@
     <h3>Transfer property</h3><hr/>
     <p>
         <h4>Look <a href="http://">here</a> for details on properties</h4><br>
-        <form action="">
+        <form action="/transfer" method="post">
+            {% csrf_token %}
             <fieldset>
                 <legend>Details of transfer</legend>
             <div class="input-group vertical">

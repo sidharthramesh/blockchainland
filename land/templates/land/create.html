@@ -4,7 +4,8 @@
   <div class="col-sm-12 col-md-10 col-md-offset-1">
     <br/>
     <h3>Create property</h3><hr/>
-    <form action="#">
+    <form action="/create/" method="post">
+      {% csrf_token %}
         <fieldset>
             <legend>Property details</legend>
         

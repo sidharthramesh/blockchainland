@@ -6,7 +6,8 @@
       <h3>Register user</h3><hr/>
       <p>
           <h4>Generate a private and a public key locally for better security. Or use this <a>generator</a></h4><br>
-          <form action="">
+          <form action="/register" method="post">
+            {% csrf_token %}
               <fieldset>
                   <legend>Register yourself</legend>
               <div class="input-group vertical">

@@ -17,10 +17,26 @@
     <a href="/register" class="button">Register</a>
     <a href="#" class="button">All Properties</a>
   </header>
-
+  {% for message in messages %}
+  <div>
+      <div class="row">
+          
+          <div class="col-sm-12">
+              <div class="card fluid {{ message.tags }}">
+                <div class="section">
+                  <p>{{message}}</p>
+                </div>
+              </div>
+            </div>
+              
+          </div>
+        </div>
+  </div>
+  {% endfor %}
 {% block body %}
 
 {% endblock body %}
+
 
 </body>
 </html>
