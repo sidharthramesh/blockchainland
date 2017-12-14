@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block body %}
+<table class="scrollable">
+        <caption>All Properties</caption>
+        <thead>
+          <tr>
+            <th>Property name</th>
+            <th>Asset id</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for land in lands %}
+            <tr>
+                    <td data-label="Property name">Chad</td>
+                    <td data-label="Asset id">Wilberts</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+{% endblock body %}

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="row">
+  <div class="col-sm-12 col-md-10 col-md-offset-1">
+    <br/>
+    <h3>Generate Key Pair</h3><hr/>
+    <p>Refresh the page for a new key pair.</p>
+    <p>
+        <fieldset>
+            <div class="input-group vertical">
+      Public key:<br>
+      
+      <input type="text" value="{{key.public_key}}"><br>
+      Private key:<br>
+      <input type="text" value="{{key.private_key}}"><br>
+      </div>  
+    </fieldset>
+    <p>
+        <b>Do not disclose your private key to anyone</b>
+      </p>
+    <p>
+    <a href="/register">Register here</a> after you have chosen a public key, and have <b>safely stored the private key</b> for the same.
+  </p>
+    </p>
+  </div>
+</div>
+{% endblock body %}

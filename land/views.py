@@ -3,12 +3,16 @@ from django.http import HttpResponse
 from django.views.generic import ListView, DetailView, FormView
 from .forms import CreateForm, TransferForm, RegisterForm
 from django.contrib import messages 
-
+from .bigchainland import generate_keypair
+from .models import Land
 # Create your views here.
 
 def success(request):
     return render(request,'land/success.html')
 
+def generate(request):
+    key = generate_keypair()
+    return render (request,'land/generate.html',{'key':key})
 class CreateView(FormView):
     form_class = CreateForm
     template_name = 'land/create.html'
@@ -44,3 +48,8 @@ class RegisterView(FormView):
             # Register to DataBase
             messages.success(self.request, f)
         return super().form_valid(form)
+class LandListView(ListView):
+    model = Land
+    template_name = 'land/land_list.html'
+    context_object_name = 'lands'
+    query_set = Land.objects.all()

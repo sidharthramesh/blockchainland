@@ -22,5 +22,7 @@ urlpatterns = [
     path('create/',views.CreateView.as_view()),
     path('transfer/',views.TransferView.as_view()),
     path('register/',views.RegisterView.as_view()),
+    path('all_properties',views.LandListView.as_view()),
+    path('generate/',views.generate)
 
 ]
